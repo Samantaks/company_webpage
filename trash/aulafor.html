@@ -26,10 +26,6 @@
         .product-price {
             color: green;           
         }
-
-        .above-threshold{
-            background-color: #ffe6e6;
-        }
     
     </style>
 
@@ -37,12 +33,12 @@
 <body>
     
     {% for product in products %}
-       <div class= "product-container {% if product.price > price_thereshold %} above-threshold {% endif %} ">
+       <div class= "product-container">
 
-            <p>
+        <p>
 
-                <span class="product-name"> {{forloop.counter}}. {{ product.name }}</span><br>
-                <span class= "product-price">R$ {{product.price| floatformat:2}} </span>
+        <span class="product-name"> {{forloop.counter}}. {{ product.name }}</span><br>
+        <span class= "product-price">R$ {{product.price| floatformat:2}} </span>
         
         </div>
     {% endfor %}
