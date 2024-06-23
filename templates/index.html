@@ -19,7 +19,7 @@
         <h6> email: {{ user.email }} </h6>
         <h6> Preço da presença: {{ product_price | floatformat:2  }} </h6>
     <p> 
-     {{ random_text }}
+     {{ random_text | truncatechars:20 }}
     </p>
 
 </body>
