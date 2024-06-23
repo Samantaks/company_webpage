@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'custom.css' %}" type="text/css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }   
+
+        .product-container{
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            width: 300px;
+        }
+
+        .product-name{
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .product-price {
+            color: green;           
+        }
+
+        .above-threshold{
+            background-color: #ffe6e6;
+        }
+    
+    </style>
+
+</head>
+<body>
+    
+    {% for product in products %}
+       <div class= "product-container {% if product.price > price_thereshold %} above-threshold {% endif %} ">
+
+            <p>
+
+                <span class="product-name"> {{forloop.counter}}. {{ product.name }}</span><br>
+                <span class= "product-price">R$ {{product.price| floatformat:2}} </span>
+        
+        </div>
+    {% endfor %}
+
+</body>
+</html>
