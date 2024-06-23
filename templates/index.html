@@ -8,19 +8,12 @@
     <link rel="stylesheet" href="{% static 'custom.css' %}" type="text/css">
 </head>
 <body>
-    <h1> 
-        {{ course_title }}
-    </h1>
-        <h4> 
-            {{ a_date|date:"F j, Y" }}
-        </h4>
-        <h5>Informações do Usuário: </h5>
-        <h6> nome: {{ user.name }} </h6>
-        <h6> email: {{ user.email }} </h6>
-        <h6> Preço da presença: {{ product_price | floatformat:2  }} </h6>
-    <p> 
-     {{ random_text | truncatechars:20 }}
-    </p>
+    
+    {% for product in products %}
+        <h1>
+           Produto: {{ product.name }} , Preço dele: {{ product.price }}
+        </h1>
+    {% endfor %}
 
 </body>
 </html>

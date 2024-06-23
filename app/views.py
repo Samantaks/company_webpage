@@ -5,9 +5,18 @@ from django.shortcuts import render
 
 
 def index(request):
-    context = {
+    products = [
+        {"name": "banana", "price": 10},
+        {"name": "apple", "price": 20},
+        {"name": "mango", "price": 30},
+        {"name": "orange", "price": 40},
+        {"name": "lemon", "price": 50},
 
-        
+    ]
+
+    context = {
+        "products": products ,
+
     } 
 
     return render(request, 'index.html', context)
