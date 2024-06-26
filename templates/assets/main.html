@@ -11,16 +11,12 @@
 
 </head>
 <body>
-    <div class= "header">
-        <h1> HEADER </h1> 
-    </div>
+    {% include "assets/header.html" %}
     <div class= "main">
         <h1> <a href="{% url "home" %}" > HOME PAGE</a> </h1>
         <h1> <a href="{% url "aboutus" %}"> ABOUT US</a> </h1>
     {% block mainContent %} {% endblock %}
     </div>
-    <div class= "footer">
-        <h1> FOOTER </h1> 
-    </div>
+        {% include "assets/footer.html" %}
 </body>
 </html>
