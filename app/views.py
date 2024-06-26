@@ -3,22 +3,30 @@ from django.shortcuts import render
 #from datetime import datetime
 
 
-def index(request):
 
-    products = [
-        {"name": "banana", "price": 10},
-        {"name": "apple", "price": 20},
-        {"name": "mango", "price": 30},
-        {"name": "orange", "price": 40},
-        {"name": "lemon", "price": 50},
-    ]
-    context = {
-        "products": products ,
-        "price_thereshold": 30,
-    } 
+def index(request):
+    context = {} 
     return render(request, 'index.html', context)
 
+def aboutus(request):
+    context = {} 
+    return render(request, 'about-us.html', context)
 
+
+# Aula 03 - For com If
+# def index(request):
+#     products = [
+#         {"name": "banana", "price": 10},
+#         {"name": "apple", "price": 20},
+#         {"name": "mango", "price": 30},
+#         {"name": "orange", "price": 40},
+#         {"name": "lemon", "price": 50},
+#     ]
+#     context = {
+#         "products": products ,
+#         "price_thereshold": 30,
+#     } 
+#     return render(request, 'index.html', context)
 
 # Aula 02 - For
 #def index(request):
